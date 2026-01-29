@@ -1,0 +1,28 @@
+.coin {
+    width: 150px;
+    height: 150px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Esta clase se activa desde React */
+.flipping {
+    /* Ejecuta la animación 'spin' de forma infinita mientras dure el estado */
+    animation: spin 0.2s linear infinite;
+    pointer-events: none;
+    /* Evita que el usuario haga clic mientras ya está girando */
+}
+
+/* Definimos la animación de rotación */
+@keyframes spin {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}

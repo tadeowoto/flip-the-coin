@@ -1,12 +1,17 @@
+import './Coin.css'
+
 interface CoinProps {
     isHeads: boolean
+    isFlipping: boolean
     flipTheCoin: () => void
 }
 
-export function Coin({ isHeads, flipTheCoin }: CoinProps) {
-
+export function Coin({ isHeads, flipTheCoin, isFlipping }: CoinProps) {
     return (
-        <div className="coin" onClick={flipTheCoin}>
+        <div
+            className={`coin ${isFlipping ? 'flipping' : ''}`}
+            onClick={flipTheCoin}
+        >
             {isHeads ? (
                 <img src="/heads.svg" alt="heads" />
             ) : (
@@ -14,5 +19,4 @@ export function Coin({ isHeads, flipTheCoin }: CoinProps) {
             )}
         </div>
     )
-
 }
